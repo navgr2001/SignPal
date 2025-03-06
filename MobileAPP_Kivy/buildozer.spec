@@ -12,6 +12,10 @@ package.domain = org.test
 # (str) Source code where the main.py live
 source.dir = MobileAPP_Kivy
 
+# (str) Application entry point
+# Change it to the main script file of your app if needed
+entrypoint = main.py
+
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas,ttf,csv,pkl,h5
 
@@ -82,7 +86,7 @@ fullscreen = 0
 # red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray,
 # darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
 # olive, purple, silver, teal.
-#android.presplash_color = #FFFFFF
+android.presplash_color = #5499C7
 
 # (list) Permissions
 android.permissions = CAMERA, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE
