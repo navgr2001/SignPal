@@ -4,7 +4,7 @@
 title = Hamster
 
 # (str) Package name
-package.name = hamster
+package.name = SignPal
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
