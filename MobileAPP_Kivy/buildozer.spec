@@ -16,7 +16,7 @@ source.dir = MobileAPP_Kivy
 source.include_exts = py,png,jpg,kv,atlas,ttf,csv,pkl,h5
 
 # (list) List of inclusions using pattern matching
-#source.include_patterns = assets/*,images/*.png
+source.include_patterns = Sign_Text/sign_language_model.pkl,Sign_Text/collect_csv/*.csv,Sign_Text/my_model82.h5
 
 # (list) Source files to exclude (let empty to not exclude anything)
 #source.exclude_exts = spec
