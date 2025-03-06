@@ -1,0 +1,43 @@
+<Game_Screen>:
+    name: "game"
+    BoxLayout:
+        orientation: 'vertical'
+
+        # Top Navigation Bar (Title Bar)
+        MDToolbar:
+            title: "Sign Language Quiz"
+            size_hint_y: 0.1
+            elevation: 5
+            md_bg_color: 0.1, 0.2, 0.6, 1
+            pos_hint: {"top": 1}
+
+        # Main Content Layout
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10
+            spacing: 10
+
+            BoxLayout:
+                id: video_layout
+                orientation: 'vertical'
+                size_hint_y: 0.5
+
+            BoxLayout:
+                id: options_layout
+                orientation: 'vertical'
+                size_hint_y: 0.4
+                spacing: 10
+                padding: 10
+
+        # Bottom Navigation Bar (Home Button)
+        MDBoxLayout:
+            size_hint_y: 0.1
+            md_bg_color: 0.1, 0.2, 0.6, 1
+
+            MDIconButton:
+                icon: "home"
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                user_font_size: "35sp"
+                on_release: app.root.current = "Main_Menu"

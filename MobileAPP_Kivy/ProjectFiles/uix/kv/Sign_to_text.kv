@@ -1,0 +1,65 @@
+<Sign_to_text_Screen>:
+    name: "Sign_to_text"
+    orientation: 'vertical'
+
+    MDToolbar:
+        title: "Sign To Text"
+        size_hint: 1, .08
+        elevation: 5
+        pos_hint: {"center_y": .95}
+        md_bg_color: 13/255, 65/255, 225/255, 1
+
+    MDToolbar:
+        title: "Sign To Text"
+        size_hint: 1, .08
+        elevation: 5
+        font_size: 20
+        color: 0,100,0
+        pos_hint: {"center_y": .95}
+        md_bg_color: 13/255, 65/255, 225/255, 1
+
+    MDToolbar:
+        size_hint: 1, .08
+        elevation: 5
+        md_bg_color: 13/255, 65/255, 225/255, 1
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source: "Asset//img//abc.png"
+                size: 500, 500
+                pos: self.pos
+
+    Image:
+        source: "Asset//img//signtotextbanner.png"
+        id: avatar_image
+        size_hint: 1, 1
+        pos_hint: {"center_x": 0.5, "center_y": 0.78}
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: 1, None
+        height: "380dp"  # Adjust height to fit your layout
+        pos_hint: {"center_y": 0.41}
+
+        Camera:
+            id: camera
+            resolution: (640, 480)
+            size_hint: 1, 0.7  # Camera frame will take 70% of the space
+
+        Label:
+            id: prediction_label
+            text: "Prediction will appear here"
+            font_size: 20
+            color: (0, 0, 0, 1)  # Black color for prediction text
+            size_hint: 1, None
+            height: "40dp"  # Adjust the height as needed
+            pos_hint: {"center_x": 0.5}  # Center horizontally
+
+    MDIconButton:
+        icon: "home"
+        text_color: "white"
+        theme_text_color: "Custom"
+        pos_hint: {"center_x": 0.50}
+        user_font_size: "35sp"
+        on_release: app.screen_manager.change_screen("Main_Menu")

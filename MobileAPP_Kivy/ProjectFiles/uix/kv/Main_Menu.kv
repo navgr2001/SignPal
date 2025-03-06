@@ -1,0 +1,215 @@
+<PreloaderScreen>:
+    name: 'preloader'
+
+    # Set background color for the screen
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.4, 0.6, 1  # Background color (can be changed to any RGBA value)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    # Centered logo
+    Image:
+        source: "Asset//img//logoapp.png"  # Replace with your logo path
+        size_hint: None, None
+        size: dp(250), dp(250)  # Adjust size as needed
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+    # Spinner for loading indication
+    MDSpinner:
+        size_hint: None, None
+        size: dp(50), dp(50)
+        pos_hint: {"center_x": 0.5, "center_y": 0.3}
+        active: True
+
+<Main_Menu_Screen>:
+    name: "Main_Menu"
+    md_bg_color: 255/255, 255/255, 255/255, 1
+
+    MDToolbar:
+        title: "Sign Translation App"
+        size_hint: 1, .08
+        elevation: 5
+        pos_hint: {"center_y": .95}
+        md_bg_color: 13/255, 65/255, 225/255, 1
+
+    MDToolbar:
+        size_hint: 1, .08
+        elevation: 5
+        md_bg_color: 13/255, 65/255, 225/255, 1
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source: "Asset//img//background.png"
+                size: 500, 500
+                pos: self.pos
+
+    Image:
+        source: "Asset//img//signpalbanner.png"
+        id: avatar_image
+        size_hint: 1, 1
+        pos_hint: {"center_x": 0.5, "center_y": 0.78}
+
+
+    MDIconButton:
+        icon: "home"
+        text_color: "white"
+        theme_text_color: "Custom"
+        pos_hint: {"center_x": 0.5}
+        user_font_size: "35sp"
+        on_release: app.stop()
+
+
+
+    MDGridLayout:
+        size_hint_y: .66
+        cols: 2
+        padding: [dp(20), dp(20), dp(20), dp(40)]
+        spacing: dp(15)
+
+        MDCard:
+            orientation: 'vertical'
+            size_hint: None, None
+            size: dp(150), dp(150)
+            on_release: app.screen_manager.change_screen("Sign_to_text")
+            md_bg_color: 55/255, 47/255, 255/255, 1
+            radius: [20]
+
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 0.05
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+
+            Image:
+                source: "Asset//img//signtotextlogo.png"
+                size_hint: None, None
+                size: dp(100), dp(100)
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+            MDLabel:
+                text: "Sign to Text"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                bold: True
+
+        MDCard:
+            orientation: 'vertical'
+            size_hint: None, None
+            size: dp(150), dp(150)
+            on_release: app.screen_manager.change_screen("Text_to_Sign")
+            md_bg_color: 55/255, 47/255, 255/255, 1
+            radius: [20]
+
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 0.05
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+
+            Image:
+                source: "Asset//img//texttosignlogo.png"
+                size_hint: None, None
+                size: dp(100), dp(100)
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+            MDLabel:
+                text: "Text to Sign"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                bold: True
+
+        MDCard:
+            orientation: 'vertical'
+            size_hint: None, None
+            size: dp(150), dp(150)
+            on_release: app.screen_manager.change_screen("Text_to_Speech")
+            md_bg_color: 55/255, 47/255, 255/255, 1
+            radius: [20]
+
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 0.05
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+
+            Image:
+                source: "Asset//img//texttospeech.png"
+                size_hint: None, None
+                size: dp(100), dp(100)
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+            MDLabel:
+                text: "Text to Voice"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                bold: True
+
+        MDCard:
+            orientation: 'vertical'
+            size_hint: None, None
+            size: dp(150), dp(150)
+            on_release: app.screen_manager.change_screen("Learn_Sign")
+            md_bg_color: 55/255, 47/255, 255/255, 1
+            radius: [20]
+
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 0.05
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+
+            Image:
+                source: "Asset//img//learnsign.png"
+                size_hint: None, None
+                size: dp(100), dp(100)
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+            MDLabel:
+                text: "Learn Sign"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                bold: True
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint: None, None
+        size: dp(100), dp(50)
+        pos_hint: {"center_x": 0.5, "y": 0.1}
+
+        MDCard:
+            orientation: 'vertical'
+            size_hint: None, None
+            size: dp(100), dp(50)
+            on_release: app.screen_manager.change_screen("game")
+            md_bg_color: 46/255, 204/255, 113/255, 1
+            radius: [20]
+
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 0.05
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+
+            MDLabel:
+                text: "Play Quiz!"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                bold: True

@@ -1,0 +1,88 @@
+<Text_to_Sign_Screen>:
+    name: "Text_to_Sign"
+    orientation: 'vertical'
+
+    MDToolbar:
+        title: "Text To Sign"
+        size_hint: 1, .08
+        elevation: 5
+        pos_hint: {"center_y": .95}
+        md_bg_color: 13/255, 65/255, 225/255, 1
+
+    MDToolbar:
+        size_hint: 1, .08
+        elevation: 5
+        md_bg_color: 13/255, 65/255, 225/255, 1
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source: "Asset//img//abc.png"  # Set your image here
+                size: self.size
+                pos: self.pos
+
+    Image:
+        source: "Asset//img//Sign.png"  # Static image placeholder
+        id: avatar_image
+        size_hint: 1, 1
+        pos_hint: {"center_x": 0.5, "center_y": 0.78}
+
+ 
+    # Text Input Section for Generating Sign
+    MDLabel:
+        text: "Text to Generate Sign"
+        halign: "center"
+        pos_hint: {"center_y": .6}
+        font_style: "Subtitle1"
+
+    MDTextField:
+        id: text_input
+		size_hint: .75, None
+        hint_text: "Enter your text here"
+        pos_hint: {"center_x": 0.5, "center_y": .55}
+        height: dp(40)
+
+
+    MDRaisedButton:
+        text: "Generate Sign"
+        size_hint: .6, None
+        height: dp(40)
+        pos_hint: {"center_x": 0.5, "center_y": .5}
+        on_release: root.on_button_click()  # Calls the method on button click
+
+    MDCard:
+        orientation: 'vertical'
+        size_hint: None, None
+        size: dp(300), dp(270)  # Size for the card
+        pos_hint: {"center_x": 0.5, "center_y": 0.28}
+
+        Image:
+            id: sign_image
+            source: "Asset//img//Sign.png"  # Static image placeholder
+            allow_stretch: True
+            size_hint: None, None
+            size: dp(270), dp(240)
+            pos_hint: {"center_x": 0.5}
+
+        MDLabel:
+            text: "Generated Sign Preview"
+            halign: "center"
+            size_hint_y: None
+            height: dp(30)
+
+    # Bottom Navigation Section
+    BoxLayout:
+        size_hint_y: None
+        height: dp(50)
+        padding: dp(10)
+        spacing: dp(10)
+        pos_hint: {"center_x": 0.5, "bottom": 0}
+
+    MDIconButton:
+        icon: "home"
+        text_color: "white"
+        theme_text_color: "Custom"
+        pos_hint: {"center_x": 0.1}
+        pos_hint: {"center_x": 0.50}
+        user_font_size: "35sp"
+        on_release: app.screen_manager.change_screen("Main_Menu")

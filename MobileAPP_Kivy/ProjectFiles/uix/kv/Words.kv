@@ -1,0 +1,111 @@
+<Words_Screen>:
+    name: "Words"
+    orientation: 'vertical'
+    md_bg_color: 255/255, 255/255, 255/255, 1
+
+    MDToolbar:
+        title: "Words"
+        size_hint: 1, .08
+        elevation: 5
+        pos_hint: {"center_y": .95}
+        md_bg_color: 13/255, 65/255, 225/255, 1
+
+
+
+    MDToolbar:
+        size_hint: 1, .08
+        elevation: 5
+        md_bg_color: 13/255, 65/255, 225/255, 1
+        canvas.before:
+            Color:
+                rgba: (0.058, 0.29, 1, 1)
+
+
+
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+    MDGridLayout:
+        id: button_grid  # Make sure this id is set
+        cols: 3
+        rows: 4
+        spacing: dp(20)
+        padding: [dp(70), dp(30), dp(70), dp(30)]
+        size_hint: 1, 0.5
+        pos_hint: {"center_x": 0.38, "center_y": 0.6}
+
+        MDRaisedButton:
+            text: "Monday"
+            size_hint: None, None
+            size: dp(130), dp(70)
+            md_bg_color: 0.5, 0.5, 0.5, 1
+            on_release: app.open_frames_popup("learn_sign/words/monday")
+
+        MDRaisedButton:
+            text: "Tuesday"
+            size_hint: None, None
+            size: dp(130), dp(70)
+            md_bg_color: 0.5, 0.5, 0.5, 1
+            on_release: app.open_frames_popup("learn_sign/words/tuesday")
+
+        MDRaisedButton:
+            text: "Wednesday"
+            size_hint: None, None
+            size: dp(130), dp(70)
+            md_bg_color: 0.5, 0.5, 0.5, 1
+            on_release: app.open_frames_popup("learn_sign/words/wednesday")
+
+        MDRaisedButton:
+            text: "Thursday"
+            size_hint: None, None
+            size: dp(130), dp(70)
+            md_bg_color: 0.5, 0.5, 0.5, 1
+            on_release: app.open_frames_popup("learn_sign/words/thursday")
+
+        MDRaisedButton:
+            text: "Friday"
+            size_hint: None, None
+            size: dp(130), dp(70)
+            md_bg_color: 0.5, 0.5, 0.5, 1
+            on_release: app.open_frames_popup("learn_sign/words/friday")
+
+        MDRaisedButton:
+            text: "Saturday"
+            size_hint: None, None
+            size: dp(130), dp(70)
+            md_bg_color: 0.5, 0.5, 0.5, 1
+            on_release: app.open_frames_popup("learn_sign/words/saturday")
+
+        MDRaisedButton:
+            text: "Sunday"
+            size_hint: None, None
+            size: dp(130), dp(70)
+            md_bg_color: 0.5, 0.5, 0.5, 1
+            on_release: app.open_frames_popup("learn_sign/words/sunday")
+
+        MDRaisedButton:
+            text: "Morning"
+            size_hint: None, None
+            size: dp(130), dp(70)
+            md_bg_color: 0.5, 0.5, 0.5, 1
+            on_release: app.open_frames_popup("learn_sign/words/morning")
+
+
+    # Bottom Navigation Section
+    BoxLayout:
+        size_hint_y: None
+        height: dp(50)
+        padding: dp(10)
+        spacing: dp(10)
+        pos_hint: {"center_x": 0.5, "bottom": 0}
+
+
+    MDIconButton:
+        icon: "home"
+        text_color: "white"
+        theme_text_color: "Custom"
+        pos_hint: {"center_x": 0.1}
+        pos_hint: {"center_x": 0.50}
+        user_font_size: "35sp"
+        on_release: app.screen_manager.change_screen("Learn_Sign")

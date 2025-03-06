@@ -1,0 +1,150 @@
+<Learn_Sign_Screen>:
+    name: "Learn_Sign"
+    orientation: 'vertical'
+    md_bg_color: 255/255, 255/255, 255/255, 1
+
+    MDToolbar:
+        title: "Learn Sign Language"
+        size_hint: 1, .08
+        elevation: 5
+        pos_hint: {"center_y": .95}
+        md_bg_color: 13/255, 65/255, 225/255, 1
+
+    MDToolbar:
+        size_hint: 1, .08
+        elevation: 5
+        md_bg_color: 13/255, 65/255, 225/255, 1
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 1)
+            Rectangle:
+                source: "Asset//img//abc.png"  # Set your image here
+                size: self.size
+                pos: self.pos
+
+    Image:
+        source: "Asset//img//learnsignbanner.png"  # Static image placeholder
+        id: avatar_image
+        size_hint: 1, 1
+        pos_hint: {"center_x": 0.5, "center_y": 0.78}
+
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+    MDGridLayout:
+        size_hint_y: .60
+        cols: 1
+        padding: [dp(20), dp(20), dp(20), dp(40)]
+        spacing: dp(15)
+
+
+        # Card for "Numbers"
+        MDCard:
+            orientation: 'vertical'
+            size_hint: None, None
+            size: dp(320), dp(100)
+            on_release: app.screen_manager.change_screen("Numbers")
+
+            # Add background color to the card
+            md_bg_color: 9/255, 166/255, 243/255, 1
+            radius: [15]
+
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 1, 0.9)  # Reduced opacity (30%)
+
+
+                RoundedRectangle:
+                    source: "Asset//img//numbersoverlay.png"  # Add your overlay image here
+                    size: self.size
+                    pos: self.pos
+                    radius: [15]
+
+
+            MDLabel:
+                text: "NUMBERS"
+                halign: "center"
+                theme_text_color: "Custom"  # Allows custom text color
+                text_color: 1, 1, 1, 1
+                bold: True
+                font_size: "24sp"
+
+        # Card for "Alphabet"
+        MDCard:
+            orientation: 'vertical'
+            size_hint: None, None
+            size: dp(320), dp(100)
+            on_release: app.screen_manager.change_screen("Alphabet")
+
+            # Add background color to the card
+            md_bg_color: 10/255, 133/255, 231/255, 1
+            radius: [15]
+
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 1, 0.9)  # Reduced opacity (30%)
+
+
+                RoundedRectangle:
+                    source: "Asset//img//alphabetoverlay.png"  # Add your overlay image here
+                    size: self.size
+                    pos: self.pos
+                    radius: [15]
+
+
+            MDLabel:
+                text: "ALPHABET"
+                halign: "center"
+                theme_text_color: "Custom"  # Allows custom text color
+                text_color: 1, 1, 1, 1
+                bold: True
+                font_size: "24sp"
+
+         # Card 3: Words
+        MDCard:
+            orientation: 'vertical'
+            size_hint: None, None
+            size: dp(320), dp(100)
+            on_release: app.screen_manager.change_screen("Words")
+            md_bg_color: 12/255, 99/255, 231/255, 1
+            radius: [15]
+
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 1, 0.9)  # Reduced opacity (30%)
+
+
+                RoundedRectangle:
+                    source: "Asset//img//wordoverlay.png"  # Add your overlay image here
+                    size: self.size
+                    pos: self.pos
+                    radius: [15]
+
+
+            MDLabel:
+                text: "WORDS"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                bold: True
+                font_size: "24sp"
+
+
+    # Bottom Navigation Section
+    BoxLayout:
+        size_hint_y: None
+        height: dp(50)
+        padding: dp(10)
+        spacing: dp(10)
+        pos_hint: {"center_x": 0.5, "bottom": 0}
+
+
+    MDIconButton:
+        icon: "home"
+        text_color: "white"
+        theme_text_color: "Custom"
+        pos_hint: {"center_x": 0.1}
+        pos_hint: {"center_x": 0.50}
+        user_font_size: "35sp"
+        on_release: app.screen_manager.change_screen("Main_Menu")
