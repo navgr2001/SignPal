@@ -14,7 +14,7 @@ source.dir = MobileAPP_Kivy
 
 # (str) Application entry point
 # Change it to the main script file of your app if needed
-entrypoint = main.py
+entrypoint = MobileAPP_Kivy/main.py
 
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas,ttf,csv,pkl,h5
@@ -40,7 +40,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd, opencv-python, mediapipe, numpy, requests, pillow
+requirements = python3,kivy,kivymd, opencv-python, mediapipe, numpy, requests, pillow,joblib
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
