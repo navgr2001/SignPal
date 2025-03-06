@@ -13,7 +13,7 @@ package.domain = org.test
 source.dir = MobileAPP_Kivy
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,ttf
+source.include_exts = py,png,jpg,kv,atlas,ttf,csv,pkl,h5
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
